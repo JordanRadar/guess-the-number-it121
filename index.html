@@ -5,16 +5,38 @@
 <body>
 	<script>
         let num = Math.floor(Math.random() * 11);
-
         let guess = prompt("guess a number between 1 and 10");
+        let gotIt = false;
+        let numGuesses = 0;
 
-        if(num == guess)
-        {
-            alert("Got it!");
-        }else{
-            alert("Sorry!  You guessed " + guess + " and the number was " + num);
+        while(gotIt === false){
+            numGuesses++;
+            if(num == guess)
+            {
+                //alert("Got it!");
+                gotIt = true; //break out of loop
+            }else{ //continue, since answer is incorrect!
+                
+                if(num > guess){//higher
+                    guess = prompt("Higher!");
+
+                }else{//lower
+                    guess = prompt("Lower!");
+
+                }
+                //guess = prompt("Guess again!");
+            }
         }
+        alert("Got it! You guessed " + numGuesses + " times");
+        //alert("Sorry!  You guessed " + guess + " and the number was " + num);
+//todo
+//remove 0 from possible num (check w3schools or something?)
+//range needs to be 1-100
+//add feedback (congrats message) "Congratulations! You guessed the correct number, which was NUM and it took you GUESS guess/guesses"
+//plurals (only applies to 1, where guesses would be guess in the message) IE: guess=1, guesses=0,2-100
+
 
 	</script>
 </body>
 </html>
+
