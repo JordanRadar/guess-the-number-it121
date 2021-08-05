@@ -4,8 +4,8 @@
 </head>
 <body>
 	<script>
-        let num = Math.floor(Math.random() * 11);
-        let guess = prompt("guess a number between 1 and 10");
+        let num = Math.floor(Math.random() * 100) + 1;
+        let guess = prompt("guess a number between 1 and 100" + num);
         let gotIt = false;
         let numGuesses = 0;
 
@@ -16,27 +16,23 @@
                 //alert("Got it!");
                 gotIt = true; //break out of loop
             }else{ //continue, since answer is incorrect!
-                
+
                 if(num > guess){//higher
                     guess = prompt("Higher!");
-
                 }else{//lower
                     guess = prompt("Lower!");
-
                 }
                 //guess = prompt("Guess again!");
             }
         }
-        alert("Got it! You guessed " + numGuesses + " times");
-        //alert("Sorry!  You guessed " + guess + " and the number was " + num);
-//todo
-//remove 0 from possible num (check w3schools or something?)
-//range needs to be 1-100
-//add feedback (congrats message) "Congratulations! You guessed the correct number, which was NUM and it took you GUESS guess/guesses"
-//plurals (only applies to 1, where guesses would be guess in the message) IE: guess=1, guesses=0,2-100
-
-
-	</script>
+        if (numGuesses == 1){
+            alert("Congratulations! You absolutely nailed it! The number was " + num + " and you only needed " + numGuesses + " guess!");
+        } else {
+            alert("Congratulations! The number was " + num + " and you guessed the number using " + numGuesses + " guesses");
+        }
+    </script>
 </body>
 </html>
-
+<!--
+01001010 01010010
+-->
